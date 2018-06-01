@@ -20,10 +20,10 @@ class InputForm extends React.Component {
 
     // Manages the save button
     handleSubmitNote = event => {
-        const { notes } = this.state;
-        const myNote = this.state.body;
+        // const { notes } = this.state;
+        // const myNote = this.state.body;
         const id = this.props.notes.length;
-         this.state.id = id;
+        //  this.state.id = id;
         this.props.notes.push(this.state);
         this.setState({ body: '', id: '' });
     }

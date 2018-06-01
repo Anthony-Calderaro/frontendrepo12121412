@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 // Combine Component Imports into a single file at end
@@ -13,8 +13,8 @@ import Home from './Components/Home/home.js';
 
 // const url = 'https'
 class App extends Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
     // this.state = { notes };
 
     // this.setState = this.setState.bind(this)
