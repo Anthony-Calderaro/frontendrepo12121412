@@ -1,93 +1,81 @@
-import React, { Component } from "react";
-import "./App.css";
-import { Route } from "react-router-dom";
-import { Col, Row } from "reactstrap";
-import axios from "axios";
-import Notes from "./Components/ListView";
-import Home from "./Components/home";
-import Note from "./Components/NoteView";
-const url = "https://notes-back-end.herokuapp.com/notes";
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import { Route } from 'react-router-dom';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import notes from './notes.js';
+import axios from 'axios';
+
+
+// Combine Component Imports into a single file at end
+import Header from './components/header/header.js';
+import NavBar from './components/navBar/navBar.js';
+import InputForm from './components/inputForm/inputForm.js';
+import Display from './components/display/display.js';
+import Home from './components/home/home.js';
+import displayAll from './components/displayAll/displayAll';
+import NewNote from './components/NewNote/NewNote';
+
+// const url = 'https'
 class App extends Component {
-  constructor() {
- 
-    super();
-    this.state = {
-      notes: []
-    };
+  constructor(props) {
+    super(props);
+    this.state = { notes };
+
     // this.setState = this.setState.bind(this)
   }
 
-  componentDidMount() {
-    console.log("got data from heroku");
-    this.updateGet();
-  }
-  updateGet = () => {
-    axios
-      .get(url)
-      .then(response => {
-         
-        this.setState({ notes: response.data });
+  // componentDidMount() {
+  //   this.newRequest();
+  // }
 
-    
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
-  deleteNote = noteId => {
-    axios
-      .delete(`${url}/${noteId}`)
-      .then(response => {
-        this.updateGet();
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
-  trimmer = input => {
-    if (input.length > 300) {
-      let modi = input;
-      modi = modi
-        .split("")
-        .splice(0, 297)
-        .join("");
-      return modi + "...";
-    } else {
-      return input;
-    }
-  };
-  titleTrimmer = input => {
-    if (input.length > 22) {
-      let modi = input;
-      modi = modi
-        .split("")
-        .splice(0, 19)
-        .join("");
-      return modi + "...";
-    } else {
-      return input;
-    }
-  };
+  // newRequest = () => {
+  //   axios
+  //     .get(url)
+  //     .then(response => {
+  //       this.setState({ notes: response.data })
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     })
+  // };
+
+  // deleteNote = (noteId) => {
+  //   axios.delete(`${url}/${noteId}`)
+  //   .then(response => {
+  //     this.newRequest();
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //   });
+  // };
 
   render() {
-    console.log(this.state);
     return (
-      <Row className="App">
-        <Col xs="12">
-          <Route
-            path="/"
-            render={props => <Home updateGet={this.updateGet}/>}
-          />
-        </Col>
-        <Col xs="12" className="components">
-          <Route
-            exact
-            path="/"
-            render={props => <Notes titleTrim={this.titleTrimmer}trimmer={this.trimmer} {...props} notes={this.state.notes} />}
-          />
-          <Route path="/notes/:id" component={Note} />
-        </Col>
-      </Row>
+      <div className="App">
+      <NewNote />
+ 
+        <Route
+          exact path='/' title='List View' component={Header} />
+  
+        <Route exact path='/' render={props => <Home notes={this.state.notes} />} />
+
+
+        <Route exact path='/new' component={Header} />
+        <Route exact path='/new' render={props => <InputForm notes={this.state.notes} />} />
+
+
+        <Route exact path='/note/:id' component={Header} />
+        <Route exact path='/note/:id' component={Display} />
+
+        <Route exact path='/note/:id/edit' component={Header} />
+        <Route exact path='/note/:id/edit' component={InputForm} />
+
+        <Route exact path='/note' component={Header} />
+        <Route exact path='/note' component={Display} />
+
+        <Route path='/' component={NavBar} />
+      </div>
     );
   }
 }
