@@ -8,7 +8,7 @@ import axios from 'axios';
 // Combine Component Imports into a single file at end
 // import Header from './Components/Header/header.js';
 import navBar from './Components/navBar/navBar.js';
-import inputForm from './Components/inputForm/inputForm.js';
+import InputForm from './Components/inputForm/inputForm.js';
 import Display from './Components/Display/display.js';
 import Home from './Components/Home/home.js';
 
