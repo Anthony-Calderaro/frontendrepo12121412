@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import notes from './notes.js';
 import axios from 'axios';
 
 
