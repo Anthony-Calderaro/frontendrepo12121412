@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import axios from 'axios';
 
 

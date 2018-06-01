@@ -1,7 +1,7 @@
 import React from 'react';
 import './display.css';
 import { Link } from 'react-router-dom';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal } from 'reactstrap';
 
 class Display extends React.Component {
     constructor(props) {
