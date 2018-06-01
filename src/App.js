@@ -18,7 +18,7 @@ class App extends Component {
     // this.state = { notes };
 
     // this.setState = this.setState.bind(this)
-  }
+  // }
 
   // componentDidMount() {
   //   this.newRequest();
