@@ -6,13 +6,11 @@ import axios from 'axios';
 
 
 // Combine Component Imports into a single file at end
-import Header from './components/Header/header.js';
-import NavBar from './components/navBar/navBar.js';
-import InputForm from './components/inputForm/inputForm.js';
-import Display from './components/display/display.js';
-import Home from './components/home/home.js';
-import displayAll from './components/displayAll/displayAll';
-import NewNote from './components/NewNote/NewNote';
+import Header from './Components/Header/header.js';
+import navBar from './Components/navBar/navBar.js';
+import inputForm from './Components/inputForm/inputForm.js';
+import Display from './Components/Display/display.js';
+import Home from './Components/Home/home.js';
 
 // const url = 'https'
 class App extends Component {
