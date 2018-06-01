@@ -7,7 +7,7 @@ import axios from 'axios';
 
 // Combine Component Imports into a single file at end
 // import Header from './Components/Header/header.js';
-import navBar from './Components/navBar/navBar.js';
+import NavBar from './Components/navBar/navBar.js';
 // import InputForm from './Components/inputForm/inputForm.js';
 import Display from './Components/Display/display.js';
 // import Home from './Components/Home/home.js';
@@ -16,7 +16,7 @@ import Display from './Components/Display/display.js';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { notes };
+    // this.state = { notes };
 
     // this.setState = this.setState.bind(this)
   }
@@ -49,7 +49,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <NewNote />
+      {/* <NewNote /> */}
  
         {/* <Route
           exact path='/' title='List View' component={Header} /> */}
