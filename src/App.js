@@ -6,11 +6,11 @@ import axios from 'axios';
 
 
 // Combine Component Imports into a single file at end
-// import Header from './Components/Header/header.js';
+import Header from './Components/Header/header.js';
 import NavBar from './Components/navBar/navBar.js';
-// import InputForm from './Components/inputForm/inputForm.js';
+import InputForm from './Components/inputForm/inputForm.js';
 import Display from './Components/Display/display.js';
-// import Home from './Components/Home/home.js';
+import Home from './Components/Home/home.js';
 
 // const url = 'https'
 class App extends Component {
@@ -49,25 +49,25 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      {/* <NewNote /> */}
- 
-        {/* <Route
-          exact path='/' title='List View' component={Header} /> */}
   
-        {/* <Route exact path='/' render={props => <Home notes={this.state.notes} />} /> */}
+ 
+        <Route
+          exact path='/' title='List View' component={Header} />
+  
+        <Route exact path='/' render={props => <Home notes={this.state.notes} />} />
 
 
-        {/* <Route exact path='/new' component={Header} /> */}
-        {/* <Route exact path='/new' render={props => <InputForm notes={this.state.notes} />} /> */}
+        <Route exact path='/new' component={Header} />
+        <Route exact path='/new' render={props => <InputForm notes={this.state.notes} />} />
 
 
-        {/* <Route exact path='/note/:id' component={Header} /> */}
+        <Route exact path='/note/:id' component={Header} />
         <Route exact path='/note/:id' component={Display} />
 
-        {/* <Route exact path='/note/:id/edit' component={Header} /> */}
-        {/* <Route exact path='/note/:id/edit' component={InputForm} /> */}
+        <Route exact path='/note/:id/edit' component={Header} />
+        <Route exact path='/note/:id/edit' component={InputForm} />
 
-        {/* <Route exact path='/note' component={Header} /> */}
+        <Route exact path='/note' component={Header} />
         <Route exact path='/note' component={Display} />
 
         <Route path='/' component={NavBar} />
