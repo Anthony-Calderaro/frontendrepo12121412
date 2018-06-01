@@ -10,7 +10,7 @@ import axios from 'axios';
 import navBar from './Components/navBar/navBar.js';
 // import InputForm from './Components/inputForm/inputForm.js';
 import Display from './Components/Display/display.js';
-import Home from './Components/Home/home.js';
+// import Home from './Components/Home/home.js';
 
 // const url = 'https'
 class App extends Component {
@@ -54,7 +54,7 @@ class App extends Component {
         {/* <Route
           exact path='/' title='List View' component={Header} /> */}
   
-        <Route exact path='/' render={props => <Home notes={this.state.notes} />} />
+        {/* <Route exact path='/' render={props => <Home notes={this.state.notes} />} /> */}
 
 
         {/* <Route exact path='/new' component={Header} /> */}
