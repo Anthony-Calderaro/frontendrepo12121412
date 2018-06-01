@@ -53,7 +53,7 @@ class App extends Component {
         <Route
           exact path='/' title='List View' component={Header} />
   
-        <Route exact path='/' render={props => <Home notes={this.state.notes} />} />
+        <Route exact path='/' render={props => <Home />} />
 
 
         <Route exact path='/new' component={Header} />
